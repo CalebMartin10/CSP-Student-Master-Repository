@@ -18,8 +18,9 @@ for student, scores in student_grades.items():
     for score in scores: # This loop searches the list found within the dictonary allowing me to find the average of a student's scores no matter how many students and scores there is.
         count += 1
         grades_sum += score
-        grade_average = grades_sum / count
-        student_averages[student] = grade_average
+        if count == len(scores):
+            grade_average = grades_sum / count
+            student_averages[student] = grade_average
 
 student_letter_grades = {}
 for student, average in student_averages.items():
